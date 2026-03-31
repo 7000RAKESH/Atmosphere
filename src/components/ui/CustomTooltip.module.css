@@ -1,0 +1,31 @@
+.tooltip {
+  background: #1a1d26;
+  border: 1px solid rgba(240,242,247,0.12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.74rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+
+.label {
+  color: #525870;
+  margin-bottom: 6px;
+  font-size: 0.7rem;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.name {
+  color: #8892aa;
+}
+
+.value {
+  font-weight: 500;
+}

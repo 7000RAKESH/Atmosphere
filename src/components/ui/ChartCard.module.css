@@ -1,0 +1,60 @@
+.wrapper {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.blue   { background: rgba(79,124,255,0.15); color: #a5c0ff; border: 1px solid rgba(79,124,255,0.3); }
+.purple { background: rgba(167,139,250,0.15); color: #c4a8f5; border: 1px solid rgba(167,139,250,0.3); }
+.teal   { background: rgba(0,201,167,0.15); color: #5ee8cf; border: 1px solid rgba(0,201,167,0.3); }
+.gold   { background: rgba(255,201,71,0.15); color: #ffd977; border: 1px solid rgba(255,201,71,0.3); }
+.rose   { background: rgba(255,77,109,0.15); color: #ff8fa3; border: 1px solid rgba(255,77,109,0.3); }
+.warm   { background: rgba(255,107,53,0.15); color: #ff9d7a; border: 1px solid rgba(255,107,53,0.3); }
+
+.scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-hover) transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 2px;
+}

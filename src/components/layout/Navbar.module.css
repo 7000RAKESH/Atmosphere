@@ -1,0 +1,118 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(13, 15, 20, 0.85);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 clamp(16px, 4vw, 48px);
+  gap: 20px;
+}
+
+.brand {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.45rem;
+  background: linear-gradient(135deg, #4f7cff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  background: var(--glass-2);
+}
+
+.tab.active {
+  color: #a5c0ff;
+  background: rgba(79, 124, 255, 0.12);
+  border-color: rgba(79, 124, 255, 0.35);
+}
+
+.tabIcon {
+  font-size: 1rem;
+}
+
+.locationBadge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 280px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 8px var(--teal);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.locName {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.coords {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+}
+
+@media (max-width: 768px) {
+  .locationBadge { display: none; }
+  .tab span:not(.tabIcon) { display: none; }
+  .tab { padding: 8px 12px; }
+}

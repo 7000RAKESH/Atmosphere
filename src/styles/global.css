@@ -1,0 +1,120 @@
+:root {
+  --ink: #0d0f14;
+  --ink-2: #1a1d26;
+  --ink-3: #252836;
+  --mist: #f0f2f7;
+  --mist-2: #e2e6ef;
+  --accent: #4f7cff;
+  --accent-2: #7b5ea7;
+  --warm: #ff6b35;
+  --teal: #00c9a7;
+  --gold: #ffc947;
+  --rose: #ff4d6d;
+  --text-primary: #f0f2f7;
+  --text-secondary: #8892aa;
+  --text-muted: #525870;
+  --border: rgba(240, 242, 247, 0.08);
+  --border-hover: rgba(240, 242, 247, 0.18);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-2: rgba(255, 255, 255, 0.08);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--text-primary);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: radial-gradient(ellipse 80% 60% at 20% -10%, rgba(79, 124, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(123, 94, 167, 0.12) 0%, transparent 60%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 3px;
+}
+
+/* react-datepicker overrides */
+.react-datepicker {
+  background: var(--ink-2) !important;
+  border: 1px solid var(--border-hover) !important;
+  border-radius: var(--radius) !important;
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.78rem !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow) !important;
+}
+.react-datepicker__header {
+  background: var(--ink-3) !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: var(--radius) var(--radius) 0 0 !important;
+  padding: 12px 0 8px !important;
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--text-primary) !important;
+}
+.react-datepicker__day {
+  color: var(--text-secondary) !important;
+  border-radius: 6px !important;
+}
+.react-datepicker__day:hover {
+  background: var(--glass-2) !important;
+  color: var(--text-primary) !important;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--in-range {
+  background: var(--accent) !important;
+  color: white !important;
+}
+.react-datepicker__day--disabled {
+  color: var(--text-muted) !important;
+}
+.react-datepicker__navigation-icon::before {
+  border-color: var(--text-secondary) !important;
+}
+.react-datepicker__triangle {
+  display: none !important;
+}
+.react-datepicker-popper {
+  z-index: 999 !important;
+}

@@ -1,0 +1,194 @@
+/* Temperature hero */
+.tempHero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.tempMain {
+  padding: 36px 32px;
+  background: linear-gradient(135deg, rgba(79,124,255,0.12), rgba(123,94,167,0.08));
+  border-right: 1px solid var(--border);
+}
+
+.tempLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tempBig {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(135deg, #fff 30%, #a5c0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tempDeg {
+  font-size: 0.45em;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.tempDate {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.tempStat {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.tempStat:last-child {
+  border-right: none;
+}
+
+.statLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.statVal {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.statUnit {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-left: 2px;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.grid2 { grid-template-columns: 1fr 1fr; }
+.grid3 { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+.grid4 { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+/* Sun cards */
+.sunCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  transition: border-color 0.2s;
+}
+
+.sunCard:hover { border-color: var(--border-hover); }
+
+.sunEmoji { font-size: 2rem; }
+
+.sunLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.sunTime {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Generic card parts (for wind direction) */
+.card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--border-hover); }
+
+.cardLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.cardValue {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.cardUnit {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* AQI hero card */
+.aqiHero {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+.aqiHero:hover { border-color: var(--border-hover); }
+
+.aqiVal {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 6px 0 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tempHero {
+    grid-template-columns: 1fr;
+  }
+  .tempMain { border-right: none; border-bottom: 1px solid var(--border); }
+  .tempStat { border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; align-items: center; justify-content: space-between; padding: 16px 20px; }
+  .tempStat:last-child { border-bottom: none; }
+  .grid2 { grid-template-columns: 1fr; }
+  .sunCard { padding: 14px 16px; }
+}
+
+@media (max-width: 480px) {
+  .grid3, .grid4 { grid-template-columns: 1fr 1fr; }
+}
